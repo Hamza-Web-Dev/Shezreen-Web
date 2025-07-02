@@ -1,0 +1,123 @@
+/* Navbar Styles */
+.navbar {
+  color: rgb(112, 113, 115);
+  font-size: 12px;
+  background-color: white;
+  padding: 0.2rem;
+  text-align: center; /* Center the navbar content */
+  display: flex;
+  justify-content: center; /* Align navbar content to center */
+  /* border-bottom: 1px inset rgb(212, 201, 201); */
+  border-top: 0.2px inset rgb(248, 238, 238);
+  width: 100%;
+}
+
+.menu {
+  color: rgb(112, 113, 115);
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Center the menu items */
+}
+
+.menu-item {
+  color: rgb(112, 113, 115);
+  position: relative;
+  text-align: center; /* Center the individual menu items */
+}
+
+.menu-link {
+  font-size: 14.5px;
+  color : rgb(112, 113, 115);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+  color: red;
+}
+
+/* Red Underline Animation */
+.menu-link::after {
+  color: #707173;
+  content: '';
+  position: absolute;
+  bottom: 0; /* Position underline at the bottom */
+  left: 50%; /* Start from the middle */
+  width: 0; /* Initially no width */
+  height: 2px; /* Thickness of the underline */
+  background-color: red; /* Color of the underline */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%; /* Expand to full width */
+  left: 0; /* Move to the start (left edge) */
+}
+
+/* Submenu Styles */
+.submenu {
+  color: rgb(112, 113, 115);
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white; /* Change background color to white */
+  padding: 0.25rem 0; /* Reduced padding for a more compact appearance */
+  margin: 0;
+  display: none; /* Hidden by default */
+  min-width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center submenu items */
+  z-index: 10;
+}
+
+.menu-item:hover .submenu {
+  display: block; /* Show submenu on hover */
+}
+
+.submenu-item {
+  margin: 0;
+  padding: 0; /* Remove padding to make it more compact */
+}
+
+.submenu-link {
+  color: #707173;
+  text-decoration: none;
+  display: block;
+  padding: 0.3rem 1rem; /* Reduced padding for more compactness */
+  white-space: nowrap;
+}
+
+.submenu-link:hover {
+  background-color: #f0f0f0;
+  color: red;
+}
+
+/* Targeting the first 2 submenu items for the border */
+.submenu-item:nth-child(1),
+.submenu-item:nth-child(2) {
+  border-bottom: 1px solid lightgrey;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide the navbar on devices with screen width ≤ 768px */
+  }
+}
+
+/* Styling for the menu links */
+.menu-link, .submenu-link {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-item:hover .menu-link, .submenu-item:hover .submenu-link {
+  color: #f00; /* Example hover color */
+}

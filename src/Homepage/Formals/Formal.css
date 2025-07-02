@@ -1,0 +1,167 @@
+.formal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers content horizontally */
+    justify-content: center;  /* Centers content vertically */
+    min-height: 100vh;  /* Ensures content is centered vertically */
+    padding: 0 1rem;  /* Adjust padding to avoid too much space */
+    margin-left: auto;  /* Centers container horizontally */
+    margin-right: auto;  /* Centers container horizontally */
+    width: 100%;  /* Ensures the container occupies full width */
+}
+
+.formal-container h1 {
+    text-align: center;  /* Centers the heading text */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;  /* Space between heading and cards */
+}
+
+/* Grid layout for cards */
+.formal-container .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Four cards per row */
+    gap: 1rem;  /* Space between the cards */
+    width: 70%;
+    justify-items: center;  /* Centers the cards horizontally within the grid */
+    margin-top: 2rem;  /* Space above the grid */
+}
+
+/* Formals card container */
+.formal-card {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Align content to the top */
+    height: 100%;
+}
+
+.formal-card .image-gallery {
+    position: relative;
+    width: 95%;
+    height: auto;  /* Set height to auto for responsiveness */
+    max-height: 500px;  /* Optional: Max height for the image */
+    overflow: hidden;
+}
+
+.formal-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;  /* Keep the image size as is */
+}
+
+/* Hide the buttons by default */
+.formal-card .absolute-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 20px;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none;  /* Hide by default */
+}
+
+/* Show buttons when hovering over the image */
+.formal-card .image-gallery:hover .absolute-button {
+    display: block;
+}
+
+/* Buttons on hover effect */
+.formal-card .absolute-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.formal-card .left-arrow {
+    left: 0px;
+}
+
+.formal-card .right-arrow {
+    right: 0px;
+}
+
+.formal-card .p-4 {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Align content to top */
+    align-items: center;
+}
+
+/* Adjust the margin to bring text and price even closer */
+.formal-card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0 !important;  /* Remove any bottom margin */
+    color: #6a6a6a;
+}
+
+.formal-card p {
+    color: #8a8a8a;
+    margin-top: 0 !important;  /* Remove top margin */
+    font-size: 0.85rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .formal-container .grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 cards per row for medium screens */
+    }
+    .formal-container h1 {
+        font-size: 1.25rem;  /* Smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .formal-container .grid {
+        grid-template-columns: 1fr;  /* 1 card per row for small screens */
+    }
+    .formal-container {
+        margin-right: 20px;
+    }
+
+    .formal-container h1 {
+        font-size: 1rem;  /* Adjust font size for small screens */
+        margin-bottom: 1rem;  /* Add space between heading and grid */
+    }
+
+    /* Adjust buttons for mobile */
+    .formal-card .absolute-button {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .formal-card .left-arrow {
+        left: 0px;
+    }
+
+    .formal-card .right-arrow {
+        right: 0px;
+    }
+
+    /* Adjust space between cards for small screens */
+    .formal-container .grid {
+        gap: 0.5rem;
+    }
+
+    /* Adjust margin and padding to bring text closer to image */
+    .formal-card h2 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.05rem !important;
+        color: #6a6a6a;
+    }
+
+    .formal-card p {
+        color: #8a8a8a;
+        margin-top: 0.025rem !important;
+        font-size: 0.85rem;
+    }
+}

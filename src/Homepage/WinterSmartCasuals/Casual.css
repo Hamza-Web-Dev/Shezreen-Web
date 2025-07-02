@@ -1,0 +1,211 @@
+.casual-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* This ensures the content is centered vertically */
+    padding: 0 1rem; /* Adjust padding to avoid too much space */
+    margin-left: 40px;
+}
+
+.casual-card {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to top */
+    height: 100%;
+}
+
+.casual-card .image-gallery {
+    position: relative;
+    width: 95%;
+    height: auto;  /* Set height to auto to make it responsive */
+    max-height: 500px;  /* Optional: Set a max-height to prevent excessive growth on larger screens */
+    overflow: hidden;
+}
+
+.casual-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; /* Adjust image height */
+}
+
+/* Hide the buttons by default */
+.casual-card .absolute-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 20px;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+/* Show buttons when hovering over the image */
+.casual-card .image-gallery:hover .absolute-button {
+    display: block;
+}
+
+/* Buttons on hover effect */
+.casual-card .absolute-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.casual-card .left-arrow {
+    left: 0px;
+}
+
+.casual-card .right-arrow {
+    right: 0px;
+}
+
+.casual-card .p-4 {
+    padding: 0 !important; /* Remove any extra padding */
+    margin: 0 !important; /* Ensure no margin between the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure content is aligned from the top */
+    align-items: center;
+}
+
+/* Adjust the margin to bring text and price even closer */
+.casual-card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0 !important; /* Force no bottom margin */
+    color: #6a6a6a;
+}
+
+.casual-card p {
+    color: #8a8a8a;
+    margin-top: 0 !important; /* Force no top margin */
+    font-size: 0.85rem;
+}
+
+/* Grid layout */
+.casual-container .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .casual-container .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for medium screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .casual-container .grid {
+        grid-template-columns: repeat(2, 1fr); /* 1 card per row for small screens */
+    }
+    .casual-container {
+        margin-right: 20px;
+    }
+
+    /* Adjust buttons for mobile */
+    .casual-card .absolute-button {
+        padding: 8px;
+        font-size: 18px;
+    }
+    .heading-casual {
+        font-size: 28px !important;
+    }
+
+    .casual-card .left-arrow {
+        left: 0px;
+    }
+
+    .casual-card .right-arrow {
+        right: 0px;
+    }
+
+    /* Add space between the cards in the grid for small screens */
+    .casual-container .grid {
+        gap: 0.5rem;
+    }
+
+    /* Adjust margin and padding to make text closer to image */
+    .casual-card h2 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.05rem !important; /* Reduced bottom margin */
+        color: #6a6a6a;
+    }
+
+    .casual-card p {
+        color: #8a8a8a;
+        margin-top: 0.025rem !important; /* Reduced margin to bring price closer */
+        font-size: 0.85rem;
+    }
+    .sale-label {
+        position: relative;
+        top: 40px !important;
+        right:-60% !important;
+        background-color: red;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 5px;
+        font-size: 0.6rem !important;
+        font-weight: bold;
+        z-index: 100;
+        width: 100%;
+      }
+}
+
+/* Center the heading */
+.casual-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+}
+/* Positioning and styling for SALE label */
+.sale-label {
+    position: relative;
+    top: 10%;
+    right:-70%;
+    background-color: red;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 100;
+    width: 35%;
+  }
+
+/* Styling for strikethrough and discounted price */
+.line-through {
+  text-decoration: line-through;
+}
+
+.text-red-600 {
+  color: red;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}

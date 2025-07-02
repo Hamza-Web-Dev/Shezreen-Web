@@ -1,0 +1,84 @@
+/* Container to hold all product boxes */
+.product-boxes-container {
+  display: flex;
+  gap: 20px; /* Space between boxes */
+  flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Styling for individual product boxes */
+.product-box {
+  width: 320px; /* Fixed width */
+  height: 460px; /* Fixed height */
+  overflow: hidden; /* Ensures image fits within the box */
+  position: relative;
+  border-radius: 0px; /* Optional rounded corners */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for box hover */
+}
+
+/* Product image should fill the box */
+.product-image {
+  width: 100%; /* Image fills the box width */
+  height: 100%; /* Image fills the box height */
+  object-fit: cover; /* Ensures image covers the box, cropping where necessary */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Hover effect for product image (zoom) */
+.product-box:hover .product-image {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+/* Container for the category button */
+.product-category {
+  position: absolute;
+  bottom: 10px; /* Positioning at the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the button horizontally */
+  width: 100%; /* Ensures the button spans the full width */
+  text-align: center;
+  opacity: 1; /* Button is always visible */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Button styling */
+.category-button {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Hover effect for the category button */
+.product-box:hover .category-button {
+  background-color: #d88c00; /* Darker shade of gold on hover */
+}
+
+/* Hover effect for the product box */
+.product-box:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for effect */
+}
+
+@media (max-width:768) {
+
+  .product-boxes-container {
+    display: flex;
+    gap: 2px; /* Space between boxes */
+    flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+    padding: 0px;
+    justify-content: center;
+  }
+  
+  
+}

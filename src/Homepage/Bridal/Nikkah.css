@@ -1,0 +1,117 @@
+.nikkah-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* This makes sure the content is centered vertically */
+    padding: 0 1rem; /* Adjust the padding to ensure it’s not too close to the edges */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.nikkah-card {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* Optional: for rounded corners */
+}
+
+.nikkah-card .image-gallery {
+    position: relative;
+    width: 30%;
+    height: 600px; /* Maintain consistent height */
+    overflow: hidden;
+    margin: 0 auto; /* Center the gallery */
+}
+
+.nikkah-card img {
+    width: 100%; /* Make the image span the entire width of the container */
+    height: 100%; /* Make the image span the entire height of the container */
+    object-fit: cover; /* Ensures the image covers the container proportionally */
+    object-position: center; /* Centers the image within the container */
+}
+
+/* Hide the buttons by default */
+.nikkah-card .absolute-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 24px;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+/* Show buttons when hovering over the image */
+.nikkah-card .image-gallery:hover .absolute-button {
+    display: block;
+}
+
+/* Buttons on hover effect */
+.nikkah-card .absolute-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nikkah-card .left-arrow {
+    left: 0px;
+}
+
+.nikkah-card .right-arrow {
+    right: 0px;
+}
+
+.nikkah-card .p-4 {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Adjust the margin to bring text and price closer to the image */
+.nikkah-card h2 {
+    font-size: 1.2rem; /* Smaller font size */
+    font-weight: 600;
+    margin-bottom: 0.05rem; /* Reduced margin to bring the text closer */
+    color: #6a6a6a; /* Lighter color for product name */
+}
+
+.nikkah-card p {
+    color: #8a8a8a; /* Lighter color for the price */
+    margin-top: 0.05rem; /* Reduced margin to bring price closer to text */
+    font-size: 0.875rem; /* Smaller font size for price */
+}
+
+/* Grid layout */
+.nikkah-container .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for centering */
+    gap: 10rem;
+    width: 85%;
+    margin: 0 auto; /* Center the grid horizontally */
+    margin-top: 2rem; /* Adjust space between title and grid */
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .nikkah-container .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for medium screens */
+    }
+}
+
+@media (max-width: 640px) {
+    .nikkah-container .grid {
+        grid-template-columns: 1fr; /* 1 card per row for small screens */
+    }
+}
+
+/* Center the heading */
+.nikkah-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,435 @@
+/* Container for the checkout page */
+.checkout-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Center the title and add spacing */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Container for the list of items */
+.checkout-items {
+  border-top: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+/* Individual item row */
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-item:hover {
+  background-color: #f9f9f9; /* Light grey background on hover */
+}
+
+/* Grouping item details */
+.item-details {
+  display: flex;
+  align-items: center;
+  flex: 2;
+}
+
+/* Item image */
+.item-image {
+  width: 80px; /* Adjust the width */
+  height: 80px; /* Set height to maintain square aspect ratio, or use 'auto' */
+  object-fit: cover; /* Ensure the image is properly cropped and does not stretch */
+  margin-right: 10px; /* Optional: space between the image and text */
+}
+
+/* Item name and size */
+.item-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.item-size {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Price section */
+.item-price {
+  flex: 1;
+  text-align: right;
+  font-size: 16px;
+}
+
+/* Quantity controls */
+.item-quantity {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-quantity button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.item-quantity button:hover {
+  background-color: #ddd; /* Change button color on hover */
+}
+
+.item-quantity span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Total price per item */
+.item-total {
+  flex: 1;
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Remove button */
+.remove-item-btn {
+  background: none;
+  border: none;
+  color: #d9534f;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Checkout summary section */
+.checkout-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+  text-align: right;
+}
+
+/* Add a note */
+.order-note {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.order-note:focus {
+  border-color: #333; /* Highlight border on focus */
+}
+
+/* Subtotal and tax information */
+.subtotal {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Checkout button */
+.checkout-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #555; /* Change color on hover */
+}
+
+/* Checkout header */
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Align columns */
+.header-product {
+  flex: 2;
+}
+
+.header-price,
+.header-quantity,
+.header-total {
+  flex: 1;
+  text-align: center;
+}
+
+/* Adjust item columns to align with headers */
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* Adjust item columns to align with headers */
+.item-details {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.item-price,
+.item-quantity,
+.item-total {
+  flex: 1;
+  text-align: center;
+}
+
+/* Item image */
+.checkout-container .checkout-item .item-image {
+  width: 200px;  /* Set the width */
+  height: 200px; /* Set the height */
+  object-fit: contain;  /* Ensures the image maintains its aspect ratio */
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+/* Mobile version adjustments */
+/* Mobile version adjustments */
+/* Mobile version adjustments */
+/* Mobile version adjustments */
+@media (max-width: 768px) {
+  /* Hide the header titles on mobile */
+  .checkout-header {
+    display: none;
+  }
+
+  /* Center the checkout container on the page */
+  .checkout-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center the items vertically */
+    align-items: center; /* Center the items horizontally */
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Stack the items vertically */
+  .checkout-items {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the items take full width for centering */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+  }
+
+  /* Adjust item details to stack */
+  .checkout-item {
+    display: flex;
+    flex-direction: column; /* Stack all elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    padding: 15px 0;
+    width: 80%; /* Limit width of the checkout items */
+    border-bottom: 1px solid #ddd;
+    text-align: center; /* Center text for each item */
+  }
+
+  /* Adjust image size */
+  .item-image {
+    width: 100px; /* Set a smaller width */
+    height: 100px; /* Set a smaller height */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
+    margin-bottom: 10px; /* Space between image and the next element */
+  }
+
+  /* Adjust the name of the product */
+  .item-name {
+    font-weight: bold;
+    font-size: 14px; /* Smaller font size */
+    margin-bottom: 5px; /* Space below the name */
+    color: #333;
+  }
+
+  /* Adjust the size */
+  .item-size {
+    font-size: 12px; /* Smaller font size */
+    color: #666;
+    margin-bottom: 5px; /* Space below the size */
+  }
+
+  /* Price section adjustments */
+  .item-price {
+    font-size: 14px; /* Smaller font size */
+    color: #333;
+    margin-bottom: 5px; /* Space below the price */
+    margin-top: 10px;
+  }
+
+  /* Quantity controls */
+  .item-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px; /* Space below quantity controls */
+  }
+
+  .item-quantity button {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  .item-quantity button:hover {
+    background-color: #ddd; /* Change button color on hover */
+  }
+
+  .item-quantity span {
+    font-size: 14px;
+    font-weight: bold;
+    
+  }
+
+  /* Total price per item */
+  .item-total {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Space below the total */
+  }
+
+  /* Remove button */
+  .remove-item-btn {
+    font-size: 12px;
+    color: #d9534f;
+    margin-top: 10px; /* Space above the remove button */
+  }
+
+  /* Checkout summary section */
+  .checkout-summary {
+    text-align: left;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  /* Subtotal font size */
+  .subtotal {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust button and input sizes */
+  .order-note {
+    width: 100%;
+    height: 80px;
+    font-size: 14px;
+  }
+
+  .checkout-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure button spans across the full width */
+  }
+
+  .checkout-btn:hover {
+    background-color: #555; /* Hover effect */
+  }
+
+  /* Checkout header font size */
+  .checkout-header {
+    font-size: 14px;
+  }
+
+  /* Adjust the overall font size */
+  .checkout-item {
+    font-size: 14px; /* Ensure text is smaller on mobile */
+  }
+}
+
+/* Remove button style */
+.remove-item-btn {
+  background-color: #ff6f61; /* A soft red-orange color */
+  color: black; /* Text color */
+  border: none;
+  padding: 12px 20px; /* Adjust padding for a more circular look */
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px; /* Make the button more circular */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Ensures text is centered inside the button */
+  gap: 8px;
+  text-transform: uppercase;
+}
+.remove-item-btn:hover {
+  background-color: #e94e42; /* Darker red on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow on hover */
+}
+
+.remove-item-btn:focus {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.4); /* Subtle focus outline */
+}
+
+.remove-item-btn .btn-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url('path/to/trash-icon.svg'); /* Use a trash icon */
+  background-size: cover;
+  display: inline-block;
+}
+
+.remove-item-btn span {
+  font-size: 16px; /* Adjust font size */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Optional: Add spacing to the button if needed */
+.remove-item-btn-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right of the item */
+  margin: 10px 0;
+}
+
+

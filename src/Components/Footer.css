@@ -1,0 +1,106 @@
+.footer {
+  background-color: rgb(255, 255, 255) !important; /* Background color */
+  color: #676869; /* Text color */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 150px; /* Margin at the top */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  border-radius: 2px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle box shadow for depth */
+  border-top: 2px solid rgb(167, 161, 161); /* Add 2px black border at the top */
+}
+
+/* Container to align content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px; /* Set maximum width for content */
+  margin: 0 auto; /* Center the container */
+  flex-wrap: wrap;
+  gap: 20px; /* Add gap between columns */
+  padding: 20px; /* Add padding inside the container */
+}
+
+/* Each column style */
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  text-align: center; /* Align all content within the column to the center */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* Center align column content horizontally */
+}
+
+/* Footer titles */
+.footer-column h3 {
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 15px; /* Add space below the title */
+  font-weight: 600; /* Bolder font weight for headings */
+  text-align: center; /* Center the headings */
+  text-transform: uppercase; /* Uppercase for better structure */
+  letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+}
+
+/* Footer links */
+.footer-column ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column a,
+.footer-column li a {
+  color: #676869; /* Apply text color */
+  text-decoration: none;
+  font-size: 1rem; /* Set font size for links */
+}
+
+.footer-column a:hover {
+  color: #333; /* Darker color on hover */
+  text-decoration: underline;
+}
+
+.footer-column p {
+  font-size: 1rem;
+  margin-bottom: 0px;
+  line-height: 1.5; /* Improve line spacing for better readability */
+}
+
+/* Styling for smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    text-align: center;
+    margin-bottom: 20px;
+    align-items: center; /* Ensure content is centered */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 20px 5px; /* Reduce padding on very small screens */
+  }
+
+  .footer-column h3 {
+    font-size: 1.2rem; /* Even smaller heading font size */
+  }
+
+  .footer-column a {
+    font-size: 0.85rem; /* Smaller links on very small screens */
+  }
+}
+.Rights{
+  text-align: center;
+
+}

@@ -1,0 +1,26 @@
+.header-social-icons {
+  background-color: #fbf7fc; /* Subtle pinkish off-white tone */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-start; /* Align icons to the right */
+  align-items: center;
+  border-bottom: 1px solid #ddd; /* Optional: Light border for separation */
+  padding: 5px 35px;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 0.75rem; /* Space between icons */
+}
+
+.icon {
+  color: #333; /* Default icon color */
+  font-size: 18px; /* Icon size */
+  transition: color 0.3s ease;
+  padding-top: 5px;
+  line-height: 16.8px;
+}
+
+.icon:hover {
+  color: #f0a500; /* Highlight color on hover */
+}

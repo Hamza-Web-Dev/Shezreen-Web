@@ -1,0 +1,32 @@
+/* Main container for the slideshow */
+.slideshow-container {
+    margin-top: 0px; /* Spacing below the navbar */
+    margin-bottom: 10px;
+  }
+  
+  /* Swiper container with a maximum height */
+  .swiper-container {
+    width: 100%;
+    max-height: 100vh; /* Prevents the swiper from becoming too tall */
+  }
+  
+  /* Individual slide styling */
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+  }
+  
+  /* Image inside each slide */
+  .slide-image {
+    width: 100%;
+    max-width: 100%; /* Limits image width for very large screens */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 100vh; /* Prevents the image from exceeding the viewport height */
+    object-fit: cover;
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  }

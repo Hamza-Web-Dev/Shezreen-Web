@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+@font-face {
+  font-family: "ITC Galliard";
+  src: url("/path-to-your-font/ITC-Galliard.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "ITC Galliard", serif;
+}
+
+.new-arrivals-slider {
+  padding: 1rem;
+  background-color: #f9f7f7;
+  font-family: "Josefin Sans", Arial, "sans-serif";
+}
+
+.new-arrivals-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0rem;
+  background-color: transparent;
+}
+
+.header-title {
+  font-size: 24px;
+  color: #333;
+  font-weight: 200;
+}
+
+.view-all {
+  font-size: 15px;
+  line-height: 24px;
+  color: #c16452;
+  background-color: transparent;
+  margin-top: 0rem;
+}
+
+.swiper-container {
+  padding: 1rem 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Ensure the content stays at the bottom */
+  padding: 1rem;
+  height: 100%; /* Let the item take full height for proper alignment */
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.item-image {
+  width: 95%;
+  height: auto;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 1rem 0; /* Spacing above and below the name */
+  white-space: normal; /* Allow wrapping of text */
+}
+
+.item-price {
+  font-size: 1.2rem; /* Make the price larger */
+  color: #666;
+  margin-top: 1rem; /* Add space above the price */
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #d9534f;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .new-arrivals-slider {
+    padding: 0.5rem;
+  }
+
+  .header-title {
+    font-size: 25px;
+  }
+
+  .view-all {
+    font-size: 16px;
+  }
+
+  .item {
+    max-width: 100%;
+    padding: 1rem; /* Ensure enough space inside each card */
+    height: auto; /* Allow flexible height to accommodate the text */
+  }
+
+  .item-name {
+    font-size: 1.2rem; /* Slightly bigger text on mobile */
+    margin: 1rem 0; /* Increase space between name and price */
+    white-space: normal;
+  }
+
+  .item-price {
+    font-size: 1.4rem; /* Make price bigger for mobile */
+    margin-top: 1rem; /* Keep spacing from name */
+  }
+
+  /* Reduce margin at the bottom of the card */
+  .item {
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust swiper button sizes on mobile */
+  .swiper-button-next,
+  .swiper-button-prev {
+    font-size: 1.2rem;
+  }
+
+  .swiper-container {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 18px;
+  }
+
+  .view-all {
+    font-size: 12px;
+  }
+
+  .item-name {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    padding: 0 0rem; /* Ensure it fits within the card */
+  }
+
+  .item-price {
+    font-size: 1.1rem; /* Larger price text */
+    margin-top: 0.1rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,33 @@
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container for entire app layout */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer stays at the bottom */
+  }
+  
+  /* Header, Search, and Navbar styles (ensure they stay at the top) */
+  header, .search, .navbar {
+    z-index: 10; /* Keep them above the main content */
+  }
+  
+  /* Main content (this takes up remaining space) */
+  .main-content {
+    flex: 1; /* This ensures that it takes all available space */
+    padding: 20px;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px; /* Optional: Adds some space before footer */
+  }
+  

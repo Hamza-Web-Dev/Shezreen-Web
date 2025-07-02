@@ -1,0 +1,247 @@
+/* General styling */
+.checkout-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+/* Left section styling (form) */
+.left-section {
+  width: 60%;
+  padding-right: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: #fff; /* Ensure no background color on refresh */
+}
+
+/* Remove the styles that may be set by autofill */
+input:focus, select:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.row input {
+  width: 48%;
+}
+
+.shipping-option {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Right section styling (summary) */
+.right-section {
+  width: 38%;
+  padding-left: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.cart-summary {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.cart-item-info span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.summary-line.total {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.pay-now-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.pay-now-btn:hover {
+  background-color: #0056b3;
+}
+
+.remove-item-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.remove-item-btn i {
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.remove-item-btn:hover i {
+  color: #ff0000;
+}
+
+.remove-item-btn:focus,
+.remove-item-btn:active {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkout-details {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 0;
+  }
+
+  .right-section {
+    margin-top: 20px;
+  }
+
+  .row input {
+    width: 100%;
+  }
+
+  .section h2 {
+    font-size: 1.1em;
+  }
+
+  .pay-now-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* Form Validation Styles */
+input[required]:invalid,
+select[required]:invalid,
+textarea[required]:invalid {
+  border: 1px solid red;
+}
+
+input[required]:valid,
+select[required]:valid,
+textarea[required]:valid {
+  border: 1px solid green;
+}
+
+/* Miscellaneous */
+label {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.shipping-option span {
+  color: #333;
+}
+
+/* Reset styles for Autofill */
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: #fff !important; /* Ensures autofill values do not override */
+  color: #333 !important;
+}
