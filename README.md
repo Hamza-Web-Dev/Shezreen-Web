@@ -69,22 +69,20 @@ flowchart TD
 ```
 Shezreen/
 ├── .github/workflows/deploy.yml   # GitHub Pages auto-deploy
-└── client/                        # React + Vite frontend
-    ├── public/
-    │   ├── favicon.svg
-    │   └── images/products/       # All product photography (local)
-    └── src/
-        ├── components/            # Navbar, Hero, Collection, Cards, Modal, Story, Contact, Footer
-        ├── data/products.js       # Product catalog (edit this to update the shop)
-        ├── config/site.js         # Brand name, contact, WhatsApp number
-        ├── index.css              # Full design system
-        └── App.jsx                # App shell
+├── public/
+│   ├── favicon.svg
+│   └── images/products/           # All product photography (local)
+└── src/
+    ├── components/                # Navbar, Hero, Collection, Cards, Modal, Story, Contact, Footer
+    ├── data/products.js           # Product catalog (edit this to update the shop)
+    ├── config/site.js             # Brand name, contact, WhatsApp number
+    ├── index.css                  # Full design system
+    └── App.jsx                    # App shell
 ```
 
 ## Getting Started
 
 ```bash
-cd client
 npm install
 npm run dev
 ```
@@ -94,21 +92,20 @@ Open `http://localhost:5173`.
 ## Build & Deploy
 
 ```bash
-cd client
-npm run build   # outputs to client/dist
+npm run build   # outputs to dist/
 npm run preview # preview the production build
 ```
 
-Pushing to `main` triggers the GitHub Actions workflow which builds and deploys to GitHub Pages automatically.
+Pushing to `main` triggers the GitHub Actions workflow which builds and deploys to GitHub Pages automatically. The app is Vite-based at the repo root, so Vercel detects it without any configuration.
 
 ## Customising the Catalog
 
-Edit `client/src/data/products.js`:
+Edit `src/data/products.js`:
 
 - Add / remove / rename products, change prices and descriptions
-- Drop new photos into `client/public/images/products/` and reference them by filename
+- Drop new photos into `public/images/products/` and reference them by filename
 
-Update brand details, WhatsApp number and socials in `client/src/config/site.js`.
+Update brand details, WhatsApp number and socials in `src/config/site.js`.
 
 ---
 
