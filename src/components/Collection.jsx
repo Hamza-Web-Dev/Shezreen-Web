@@ -1,10 +1,31 @@
 import { useEffect, useMemo, useState } from 'react'
-import { categories, products } from '../data/products'
+import { categories, products as fallback } from '../data/products'
+import { fetchProducts } from '../api/products'
 import ProductCard from './ProductCard'
 import ProductModal from './ProductModal'
 
 function Collection({ category, onCategoryChange }) {
   const [selected, setSelected] = useState(null)
+  const [products, setProducts] = useState(fallback)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    setLoading(true)
+    fetchProducts()
+      .then((data) => {
+        if (active && Array.isArray(data) && data.length) setProducts(data)
+      })
+      .catch(() => {
+        if (active) setProducts(fallback)
+      })
+      .finally(() => {
+        if (active) setLoading(false)
+      })
+    return () => {
+      active = false
+    }
+  }, [])
 
   useEffect(() => {
     const onKey = (e) => {
@@ -23,7 +44,7 @@ function Collection({ category, onCategoryChange }) {
 
   const visible = useMemo(
     () => (category === 'all' ? products : products.filter((p) => p.category === category)),
-    [category],
+    [products, category],
   )
 
   return (
@@ -51,11 +72,12 @@ function Collection({ category, onCategoryChange }) {
 
         <div className="grid">
           {visible.map((p) => (
-            <ProductCard key={p.id} product={p} onOpen={() => setSelected(p)} />
+            <ProductCard key={p._id || p.id} product={p} onOpen={() => setSelected(p)} />
           ))}
         </div>
 
-        {visible.length === 0 && <p className="grid-empty">Nothing here yet — check back soon.</p>}
+        {loading && <p className="grid-empty">Loading collection…</p>}
+        {!loading && visible.length === 0 && <p className="grid-empty">Nothing here yet — check back soon.</p>}
       </div>
 
       {selected && <ProductModal product={selected} onClose={() => setSelected(null)} />}
