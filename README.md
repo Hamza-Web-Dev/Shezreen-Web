@@ -1,92 +1,115 @@
-# MERN Portfolio
+# Shezreen — Luxury Pret, Formals & Bridal
 
-A full-stack portfolio website built with the MERN stack (MongoDB, Express.js, React.js, Node.js). Deployable to Vercel for free — no credit card required.
+A single-page fashion boutique website for **Shezreen**, featuring a hand-curated product catalog, elegant editorial design, and WhatsApp-based ordering.
+
+![Tech](https://img.shields.io/badge/React-19-blue)
+![Vite](https://img.shields.io/badge/Vite-8-purple)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+---
+
+## What it's about
+
+Shezreen is a luxury clothing brand. This website is its digital storefront:
+
+- **Browse collections** — Winter Collection, Shawls, Formals and Bridal wear.
+- **Enquire in one tap** — every product links straight to a pre-filled WhatsApp message, because pieces are made to order.
+- **Elegant, editorial look** — serif typography, warm cream & gold palette, and full-bleed photography built to feel like a boutique, not a shop.
+
+It is a fully static site (no backend required), designed to be deployed free on GitHub Pages or Vercel.
 
 ## Features
 
-- **Home/Hero** — Name, role, and tagline
-- **About** — Bio and contact details
-- **Skills** — Animated skill bars
-- **Projects** — Loaded from the database via the API (falls back to sample data)
-- **Contact** — Message form that stores submissions in MongoDB
-- **Dark mode** — Follows your system preference
+- Product catalog with categories and live filtering
+- Product detail modal with images, price and description
+- One-tap WhatsApp enquiry per product
+- Responsive layout (mobile-first navigation, adaptive grids)
+- Local image assets — no external image hosting, no broken links
+- Smooth scroll, hover zooms, lightbox animations
+- SEO-ready meta tags and custom favicon
+
+## Tech Stack / Languages
+
+| Layer     | Technology                                            |
+| --------- | ----------------------------------------------------- |
+| UI        | React 19 (JSX), CSS3                                   |
+| Build     | Vite 8                                                 |
+| Language  | JavaScript (ESM)                                       |
+| Tooling   | oxlint (linting)                                       |
+| Hosting   | GitHub Pages (workflow included) / Vercel              |
+| Styling   | Custom CSS design system (variables, no frameworks)    |
+
+## Workflow Diagram
+
+How a visitor moves through the site from landing to order enquiry:
+
+```mermaid
+flowchart TD
+    A[Open shezreen website] --> B[Land on hero + brand intro]
+    B --> C[Browse collection]
+    C --> D{Filter by category}
+    D -->|Winter Collection| E1[View winter suits]
+    D -->|Shawls| E2[View shawls]
+    D -->|Formals| E3[View formal wear]
+    D -->|Bridal| E4[View bridal / Nikkah / Walimah / Barat]
+    E1 --> F[Click a product card]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+    F --> G[Product modal: image, price, description]
+    G --> H{Enquire?}
+    H -->|Yes| I[Pre-filled WhatsApp message]
+    I --> J[Shezreen team replies with details & order process]
+    H -->|No| C
+    J --> K[Order confirmed / customisation discussion]
+```
 
 ## Project Structure
 
 ```
-client/
-├── api/          # Express API (runs on Vercel as serverless functions, or locally)
-│   ├── index.js      # Vercel function entry + local server
-│   ├── app.js        # Express app (routes, CORS, JSON)
-│   ├── config/       # MongoDB connection
-│   ├── models/       # Project & Message schemas
-│   ├── routes/       # /api/projects and /api/messages
-│   └── seed.js       # Seeds sample projects into MongoDB
-├── src/          # React frontend
-└── vercel.json   # Routes /api/* to the serverless function
+Shezreen/
+├── .github/workflows/deploy.yml   # GitHub Pages auto-deploy
+└── client/                        # React + Vite frontend
+    ├── public/
+    │   ├── favicon.svg
+    │   └── images/products/       # All product photography (local)
+    └── src/
+        ├── components/            # Navbar, Hero, Collection, Cards, Modal, Story, Contact, Footer
+        ├── data/products.js       # Product catalog (edit this to update the shop)
+        ├── config/site.js         # Brand name, contact, WhatsApp number
+        ├── index.css              # Full design system
+        └── App.jsx                # App shell
 ```
 
-## Getting Started (local)
-
-### 1. Install dependencies
+## Getting Started
 
 ```bash
 cd client
 npm install
-```
-
-### 2. Set up MongoDB
-
-Use MongoDB Atlas (free): create a cluster, a database user, allow access from anywhere, and copy the connection string. Then:
-
-```bash
-cd client
-copy api\.env.example api\.env
-# Edit api\.env and set MONGO_URI to your connection string
-```
-
-### 3. Seed sample projects (optional)
-
-```bash
-cd client
-node api/seed.js
-```
-
-### 4. Run the app (two terminals)
-
-```bash
-# Terminal 1 — start the API on port 5000
-cd client
-npm run dev:server
-
-# Terminal 2 — start the frontend
-cd client
 npm run dev
 ```
 
-Open `http://localhost:5173`. Vite proxies `/api` requests to the backend.
+Open `http://localhost:5173`.
 
-## Deploying to Vercel (free, no card)
+## Build & Deploy
 
-1. Push this repo to GitHub
-2. Go to **vercel.com** → sign up with GitHub → **Import** the repo
-3. Vercel auto-detects Vite. Set:
-   - **Root Directory:** `client`
-   - Framework preset: **Vite** (auto)
-4. Add one environment variable:
-   - **Key:** `MONGO_URI`
-   - **Value:** your Atlas connection string
-5. Click **Deploy**
+```bash
+cd client
+npm run build   # outputs to client/dist
+npm run preview # preview the production build
+```
 
-The site is served from the Vite build, and every `/api/*` request is handled by the Express app in `client/api/`.
+Pushing to `main` triggers the GitHub Actions workflow which builds and deploys to GitHub Pages automatically.
 
-## Customization
+## Customising the Catalog
 
-Update your personal details in `client/src/config/site.js`:
+Edit `client/src/data/products.js`:
 
-- Name, bio, email, location
-- Social links (GitHub, LinkedIn, Twitter)
-- Skills list
-- Sample projects (replace with your own)
+- Add / remove / rename products, change prices and descriptions
+- Drop new photos into `client/public/images/products/` and reference them by filename
 
-To change the projects shown on the live site, edit them via the API at `client/api/routes/projects.js` or directly in MongoDB, then re-seed.
+Update brand details, WhatsApp number and socials in `client/src/config/site.js`.
+
+---
+
+© Shezreen. Handcrafted elegance in every thread.
